@@ -7,7 +7,7 @@ Exercício de aprendizado de JS através do armamento do robô e na consistênci
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [Meu processo](#meu-processo)
-  - [construído com](#construído-com)
+  - [Construído com](#construído-com)
   - [O que eu aprendi](#o-que-eu-aprendi)
   - [Próximos aprendizados](#próximos-aprendizados)
 - [Autora](#autora)
