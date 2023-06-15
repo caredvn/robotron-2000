@@ -1,0 +1,343 @@
+:root {
+    --main-cinza: #fec89a;
+    --main-branco: #f4f1de;
+    --main-preto: #293241;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color:hsla(51,50%,91%,1);
+    background-image:
+        radial-gradient(at 79% 29%, hsla(36,79%,75%,1) 0px, transparent 50%),
+        radial-gradient(at 23% 33%, hsla(150,24%,60%,1) 0px, transparent 50%),
+        radial-gradient(at 73% 91%, hsla(12,67%,62%,1) 0px, transparent 50%),
+        radial-gradient(at 49% 97%, hsla(234,19%,29%,1) 0px, transparent 50%);
+    padding: 0;
+    margin: 0;
+    font-weight: 300;
+}
+
+body, input {
+    font-family: 'Frank Ruhl Libre', serif;
+}
+
+main {
+    width: 80vw;
+    height: 80vh;
+    margin: 10vh 8vw 10vh 12vw;
+    display: flex;
+    justify-content: space-around;
+    gap: 1vw;
+}
+
+.robotron {
+    background: url(../img/estrutura.png);
+    border-radius: 30% 0;
+    background-position: center center;
+    margin: 0;
+    flex-basis: 40%;
+    position: relative;
+}
+
+.robo {
+    height: 110%;
+    z-index: 1;
+    position: absolute;
+    left: -20%;
+    top: -5%;
+}
+
+.titulo {
+    transform: rotate(180deg);
+    writing-mode: vertical-rl;
+    word-spacing: 1.15rem;
+    width: 100%;
+    font-weight: 900;
+    font-size: 61px;
+    position: absolute;
+    left: -3rem;
+    bottom: 0rem;
+    line-height: 0.8;
+    text-orientation: mixed;
+    color: #81b29ad7;
+    text-shadow: 5px 0px 0px #293241;
+}
+
+.box {
+    background: #f4f1de4e;
+    clip-path: polygon(calc(100% - 30px) 0, 100% 30px, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0 calc(100% - 30px), 0 30px, 30px 0);
+    border: 1.5px solid #81b29a;
+    border-left: 5px solid #81b29a;
+    height: 80%;
+}
+
+/*------------- Equipamentos -------------*/
+
+.equipamentos {
+    flex-basis: 32%;
+}
+
+.montador {
+    height: 100%;;
+}
+
+.montador-conteudo {
+    padding: 0.6em 8%;
+}
+
+.peca {
+    padding: 0px 0px 15px 0;
+}
+
+.peca:first-child {
+    padding: 5px 0px 15px 0;
+}
+
+.peca-titulo {
+    top: 0.25em;
+    position: relative;
+    display: inline-block;
+    color: var(--main-preto);
+    font-size: 2em;
+    font-weight: 600;
+    font-size: 2em;
+}
+
+.controle {
+    background: goldenrod;
+    border-radius: 25px;
+    float: right;
+    display: inline-flex;
+    padding: 5px;
+    align-items: center;
+    align-self: flex-end;
+    border: 2px solid var(--main-branco);
+}
+
+.controle-contador {
+    width: 35px;
+    height: 35px;
+    background: none;
+    font-weight: 600;
+    border: 0;
+    margin: 0 1rem;
+    color: var(--main-preto);
+    text-align: center;
+    font-size: 2em;
+    display: inline-flex;
+    align-items: center;
+}
+
+[data-controle="+"] {
+    background-image: url(../img/+.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+[data-controle="-"] {
+    background-image: url(../img/-.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.controle-ajuste {
+    display: inline-block;
+    background-color: var(--main-branco);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid var(--main-preto);
+    cursor: pointer;
+}
+
+.linha {
+    margin: 15px 0;
+    border: 1px solid var(--main-branco);
+}
+
+.producao {
+    font-family: inherit;
+    margin-top: 2em;
+    font-size: 1.75em;
+    font-weight: 800;
+    padding: 0.2em 1em;
+    float: right;
+    border: 3px solid var(--main-cinza);
+    background: var(--main-branco);
+    clip-path: polygon(100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 0);
+    cursor: pointer;
+    color: var(--main-preto);
+}
+
+.producao:hover {
+    background: goldenrod;
+    color: var(--main-branco);
+    text-shadow: 5px 0px 0px #81b29a;
+    transition: 100ms;
+}
+
+.desativado {
+    z-index: -1;
+}
+
+
+
+/*------------- Estatísticas -------------*/
+.estatisticas {
+    flex-basis: 23%;
+    padding: 1.5em 1em 0 1.75em;
+}
+
+.estatistica {
+    color: var(--main-preto);
+    display: flex;
+    align-items: flex-start;
+    height: 25%;
+}
+
+.estatistica-titulo {
+    font-size: 1.15em;
+    font-weight: 700;
+    border-bottom: 2px solid var(--main-branco);
+    flex-basis: 40%;
+    order: 1
+}
+
+.estatistica-valor {
+    flex-basis: 55%;
+    position: relative;
+    margin: 10px 0 0;
+    order: 2;
+    margin: -10px 0 0;
+}
+
+.estatistica-valor::after {
+    content: "";
+    display: block;
+    padding-bottom: 95%;
+    border: 2px solid var(--main-branco);
+    border-radius: 50%;
+}
+
+.estatistica-numero {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    line-height: 100%;
+    text-align: center;
+    font-size: 2.75em;
+    font-weight: 600;
+    margin: 0;
+}
+
+.estatistica:nth-child(2n) .estatistica-titulo {
+    order: 2;
+    text-align: right;
+}
+
+.estatistica:nth-child(2n) .estatistica-valor {
+    order: 1;
+    flex-basis: 45%;
+}
+
+/* ---------------- Caixa Producao ---------------- */
+
+.caixaproducao {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: 2;
+    background-color: #00000099;
+}
+
+.caixaproducao-container {
+    margin: 200px auto;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: center;
+    width: 40%;
+    height: 30%;
+    background-color: #81b29a;
+}
+
+.textoproducao {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-preto);
+    font-size: 32px;
+    text-shadow: 5px 0px 0px var(--main-cinza);
+}
+
+.fecharproducao-container {
+    display: inline;
+    margin: 15px 20px 0;
+    position: absolute;
+}
+
+.fecharproducao {
+    background-image: url(../img/Group\ 1.svg);
+    background-color: #00000000;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+.fecharproducao:active {
+    opacity: 0.5;
+}
+
+.fecharproducao:hover {
+    transform: rotate(135deg);
+    transition: 200ms;
+}
+
+.hidden {
+    display: none;
+}
+
+
+@media screen and (max-width: 1600px) {
+    body { 
+        font-size: 14px;
+    }
+    main {
+        width: 90vw;
+        height: 90vh;
+        margin: 5vh auto;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    body { 
+        font-size: 10px;
+    }
+
+    main {
+        width: 85vw;
+        height: 80vh;
+        margin: 10vh auto;
+    }
+
+    .controle-contador {
+        margin: 0rem;
+    }
+
+    .linha {
+        margin: 10px 0;
+    }
+}
